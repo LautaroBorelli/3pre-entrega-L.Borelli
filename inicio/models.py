@@ -11,6 +11,6 @@ class Pilotos(models.Model):
     edad= models.IntegerField()
     podios=models.IntegerField()
     
-class GrandPrix(models.model):
+class GrandPrix(models.Model):
     Pais=models.CharField(max_length=20)
     win=models.CharField(max_length=20)

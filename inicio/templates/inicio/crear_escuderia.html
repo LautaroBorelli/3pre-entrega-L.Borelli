@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block h1_header %}
+    <h1>Bienvenidos a Crear Escuderias</h1>
+{% endblock h1_header %}
+    
+
+
+{% block contenido %}
+<h2> Se creó la escuderia{{escudo.nombre}}  con un total de {{escudo.victorias}} victorias</h2>
+<form action="" mthod="POST">
+
+    {% csrf_token %}
+    <p>
+        Nombre de la Escuderia:
+    <input type="text" name='nombre'>
+    </p>
+
+    <p>
+        Victorias:
+    <input type="number" name='victorias'>
+    </p>
+
+    <button>Crear</button>    
+
+</form>
+{% endblock contenido %}
+
+

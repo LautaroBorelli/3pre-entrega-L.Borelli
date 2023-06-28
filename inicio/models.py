@@ -13,5 +13,5 @@ class Piloto(models.Model):
    
     
 class GrandPrix(models.Model):
-    Pais=models.CharField(max_length=20)
+    pais=models.CharField(max_length=20)
     win=models.CharField(max_length=20)

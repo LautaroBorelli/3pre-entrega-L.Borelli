@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block titulo_head %}
+<title>Nuevo Piloto</title>
+{% endblock titulo_head %}
+
+
+{% block h1_header %}
+    <h1>Bienvenidos a Crear Pilotos</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+{% if piloto %}
+<h2> Se creó el Piloto{{piloto.name}} con {{piloto.edad}} años de edad y {{piloto.podios}} podios.</h2>
+{% endif %}
+<form action="" mthod="POST">
+ {% csrf_token %}
+    
+ {{formulario}}
+ <button>Crear</button>    
+  
+    
+</form>
+{% endblock contenido %}

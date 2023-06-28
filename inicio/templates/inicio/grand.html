@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 
-
 {% block h1_header %}
-    <h1>Bienvenidos a Crear Escuderias</h1>
+    <h1>Bienvenidos a Crear Grand Prix</h1>
 {% endblock h1_header %}
-    
 
 
 {% block contenido %}
 
-{% if escuderia%}
-<h2> Se creó la escuderia{{escuderia.nombre}} con un total de {{escuderia.victorias}} victorias</h2>
+{% if grand %}
+<h2> Se creó el Grand Prix{{grand.pais}} con la victoria de {{grand.win}}</h2>
 {% endif %}
 <form action="" mthod="POST">
  {% csrf_token %}
@@ -21,5 +19,3 @@
     
 </form>
 {% endblock contenido %}
-
-

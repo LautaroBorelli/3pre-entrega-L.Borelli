@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo_head %}
+<title>Grand Prixs</title>
+
+{% endblock titulo_head %}
+
+
+
+
+{% block h1_header %}
+
+Listado de Grand Prix
+{% endblock h1_header %}
+    
+
+
+{% block contenido %}
+
+<button> 
+<a href={% url 'crear_grand' %}>Crear Grand Prix</a>
+</button>
+
+<form action="" method="get">
+    
+    {{formulario}}
+    <button>Buscar</button>
+
+
+</form>   
+{% for prix in prixs  %}
+<li> Nombre: {{prix.pais}} -- Victoria de: {{prix.win}}  </li>
+{% endfor %}
+
+{% endblock contenido %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block titulo_head %}
+<title>Pilotos</title>
+
+{% endblock titulo_head %}
+
+
+
+
+{% block h1_header %}
+Listado de Pilotos
+{% endblock h1_header %}
+    
+
+
+{% block contenido %}
+
+<button> 
+<a href={% url 'crear_piloto' %}>Crear Pilotos</a>
+</button>
+
+<form action="" method="get">
+    
+    {{formulario}}
+    <button>Buscar</button>
+
+
+</form>   
+{% for piloto in pilotos  %}
+<li> Nombre: {{piloto.name}} -- Edad: {{piloto.edad}} -- Podios: {{piloto.podios}}  </li>
+{% endfor %}
+
+{% endblock contenido %}

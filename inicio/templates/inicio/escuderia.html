@@ -9,13 +9,27 @@
 
 
 {% block h1_header %}
-<h2> Se creó la escuderia{{escuderia.nombre}} con un total de {{escuderia.victorias}} victorias</h2>
+{% comment "" %}<h2> Se creó la escuderia{{escuderia.nombre}} con un total de {{escuderia.victorias}} victorias</h2>{% endcomment %}
+Listado de Escuderias
 {% endblock h1_header %}
     
 
 
 {% block contenido %}
 
+<button> 
+<a href={% url 'crear_escuderia' %}>Crear Escuderias</a>
+</button>
 
+<form action="" method="get">
+    
+    {{formulario}}
+    <button>Buscar</button>
+
+
+</form>   
+{% for escuderia in escuderias  %}
+<li> Nombre: {{escuderia.nombre}} -- Victorias: {{escuderia.victorias}}  </li>
+{% endfor %}
 
 {% endblock contenido %}

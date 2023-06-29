@@ -3,9 +3,21 @@ from django import forms
 class CrearEscuderia(forms.Form):
     nombre=forms.CharField(max_length=20)
     victorias=forms.IntegerField()
+
+
+class BuscarEscuderia(forms.Form):
+    nombre=forms.CharField(max_length=20, required= False)
+    
+class BuscarGrandPrix(forms.Form):
+    pais=forms.CharField(max_length=20, required= False)
+    
+class BuscarPiloto(forms.Form):
+    name=forms.CharField(max_length=20, required= False)
+  
+
     
 class CrearGrandPrix(forms.Form):
-    Pais=forms.CharField(max_length=20)
+    pais=forms.CharField(max_length=20)
     win=forms.CharField(max_length=20)
 
 class CrearPiloto(forms.Form):

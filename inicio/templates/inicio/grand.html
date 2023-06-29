@@ -10,7 +10,7 @@
 {% if grand %}
 <h2> Se creó el Grand Prix{{grand.pais}} con la victoria de {{grand.win}}</h2>
 {% endif %}
-<form action="" mthod="POST">
+<form action="" method="POST">
  {% csrf_token %}
     
  {{formulario}}

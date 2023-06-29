@@ -12,11 +12,13 @@
 {% if escuderia%}
 <h2> Se creó la escuderia{{escuderia.nombre}} con un total de {{escuderia.victorias}} victorias</h2>
 {% endif %}
-<form action="" mthod="POST">
- {% csrf_token %}
+<form action="" method="POST">
+  {% csrf_token %}
     
- {{formulario}}
- <button>Crear</button>    
+   
+    {{formulario}}
+
+   <button>Crear</button>    
   
     
 </form>

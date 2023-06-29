@@ -1,1 +1,9 @@
 # 3pre-entrega-L.Borelli
+
+Esta es mi tercer entrega- Desarrollo WEB Django
+Lo hice con una pantalla de inicio donde se pueden ver imagens e informacion...
+En el extremo superior lo separé en Inicio - Escuderias - Grand Prix - Pilotos..
+Cada uno de esos models cuenta con su pagina y su formulario, en el que puedes ver el listado de 
+los objetos creados y crear más....
+Los formularios los hice con form.py... 
+La estetica es por herencia del 'base.html' 

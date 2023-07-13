@@ -15,3 +15,7 @@ class Piloto(models.Model):
 class GrandPrix(models.Model):
     pais=models.CharField(max_length=20)
     win=models.CharField(max_length=20)
+    descripcion=models.TextField(null=True)
+    def __str__(self):
+        return f"País: {self.pais} -- Win: {self.win}"
+    

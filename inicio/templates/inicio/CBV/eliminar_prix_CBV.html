@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block h1_header %}
+    <h1>Bienvenidos a Eliminar Grand Prix</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+{% if grand %}
+
+{% endif %}
+<form action={% url 'eliminar_prix' grandprix.id %} method="POST">
+ {% csrf_token %}
+    
+ {{form}}
+ <p> Seguro que desea eliminar {{grandprix}} </p>
+ <button>Eliminar</button>    
+  
+    
+</form>
+{% endblock contenido %}

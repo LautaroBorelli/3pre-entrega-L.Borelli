@@ -11,7 +11,7 @@ urlpatterns = [
     path('pilotos',views.pilotos, name = 'pilotos'),
     # path('grand/eliminar/<int:prix_id>/', views.eliminar_prix, name= 'eliminar_prix'),
     # path('grand/modificar/<int:prix_id>/', views.modificar_prix, name= 'modificar_prix'),
-    
+    path('about/',views.about, name = 'about'),
     #CBV
     path('grand/',views.ListaPrix.as_view(), name='prixs'),
     path('crear/grand',views.CrearPrix.as_view(), name='crear_prix'),

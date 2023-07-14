@@ -8,6 +8,8 @@
 {% block contenido %}
 
 <li>Win: {{grandprix.win}} </li>
-<li>Descripción: {{grandprix.descripcion}} </li>
+<li>Aurtor: {{grandprix.autor}} </li>
+<li>Fecha: {{grandprix.fecha}} </li>
+<li>Descripción: {{grandprix.descripcion | safe}} </li>
 
 {% endblock contenido %}

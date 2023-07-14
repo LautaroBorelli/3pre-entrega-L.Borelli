@@ -1,3 +1,5 @@
+from typing import Any, Dict
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import Template, loader, context
@@ -150,13 +152,28 @@ def crear_piloto(request):
 class CrearPrix(LoginRequiredMixin,CreateView):
     model=GrandPrix
     template_name='inicio/CBV/crear_prix_CBV.html'
-    fields= ['pais','win','descripcion']
+    fields= ['pais','win','descripcion','autor','fecha','avatar']
     success_url= reverse_lazy('prixs')
     
 class ListaPrix(ListView):
     model = GrandPrix
     template_name = "inicio/CBV/lista_prix_CBV.html"
     context_object_name= 'prixs'
+    
+    def get_queryset(self):
+        listado_prixs=[]
+        formulario=BuscarGrandPrix(self.request.GET)
+        if formulario.is_valid():
+          pais_buscar = formulario.cleaned_data['pais']
+          listado_prixs= GrandPrix.objects.filter(pais__icontains=pais_buscar)
+        
+        return listado_prixs
+    
+    def get_context_data(self, **kwargs):
+       contexto= super().get_context_data(**kwargs)
+       contexto['formulario'] = BuscarGrandPrix
+       
+       return contexto
 
 
 class ModificarPrix(LoginRequiredMixin,UpdateView):
@@ -178,7 +195,8 @@ class MostrarPrix(DetailView):
 
 
 
-
+def about(request):
+    return render(request,'inicio/about.html')
 
 
 

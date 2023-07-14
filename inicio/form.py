@@ -20,7 +20,7 @@ class BuscarPiloto(forms.Form):
 class CrearGrandPrix(forms.Form):
     pais=forms.CharField(max_length=20)
     win=forms.CharField(max_length=20)
-    descripcion=forms.CharField(max_length=199)
+    descripcion=forms.CharField()
 
 class CrearPiloto(forms.Form):
     name= forms.CharField(max_length=30)

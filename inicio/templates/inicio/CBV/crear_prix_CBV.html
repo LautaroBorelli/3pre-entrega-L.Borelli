@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block h1_header %}
-    <h1>Bienvenidos a Crear Grand Prix</h1>
+    <h1>Bienvenidos... Seleccionen el Grand Prix que disfrutaron y cuentenos lo que sintieron al verlo</h1>
 {% endblock h1_header %}
 
 
@@ -10,10 +10,12 @@
 {% if grand %}
 <h2> Se creó el Grand Prix{{grand.pais}} con la victoria de {{grand.win}}</h2>
 {% endif %}
-<form action={% url 'crear_prix' %} method="POST">
+<form action={% url 'crear_prix' %} method="POST" enctype='multipart/form-data'>
  {% csrf_token %}
-    
- {{form}}
+  <table>   
+  {{form}}
+  {{form.media}}
+  </table>
  <button>Crear</button>    
   
     

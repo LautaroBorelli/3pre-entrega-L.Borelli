@@ -13,7 +13,10 @@
 <form action={% url 'modificar_prix' grandprix.id %} method="POST">
  {% csrf_token %}
     
- {{form}}
+    <table>   
+    {{form}}
+    {{form.media}}
+    </table>
  <button>Modificar</button>    
   
     

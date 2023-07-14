@@ -1,4 +1,7 @@
 from django.db import models
+from django import forms
+from ckeditor.fields import RichTextField
+
 
 # Create your models here.
 
@@ -15,7 +18,10 @@ class Piloto(models.Model):
 class GrandPrix(models.Model):
     pais=models.CharField(max_length=20)
     win=models.CharField(max_length=20)
-    descripcion=models.TextField(null=True)
+    autor=models.CharField( null=True,max_length=20)
+    fecha=models.DateTimeField(null=True)
+    descripcion=RichTextField(null=True)
+    avatar= models.ImageField(upload_to='avatares',null=True,blank=True)
     def __str__(self):
-        return f"País: {self.pais} -- Win: {self.win}"
+        return f"País: {self.pais} -- Win: {self.win} -- Autor:{self.autor} -- fecha: {self.fecha} -- Imagen: {self.avatar}"
     

@@ -7,6 +7,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def inicio(request):
     return render(request,'inicio/inicio.html')
@@ -47,7 +49,7 @@ def escuderias(request):
 
 
    
-
+@login_required
 def pilotos(request):
     
     formulario=BuscarPiloto(request.GET)
@@ -145,7 +147,7 @@ def crear_piloto(request):
 #     return render (request, 'inicio/modificar_prix.html',{'formulario':formulario} )
 
 
-class CrearPrix(CreateView):
+class CrearPrix(LoginRequiredMixin,CreateView):
     model=GrandPrix
     template_name='inicio/CBV/crear_prix_CBV.html'
     fields= ['pais','win','descripcion']
@@ -157,14 +159,14 @@ class ListaPrix(ListView):
     context_object_name= 'prixs'
 
 
-class ModificarPrix(UpdateView):
+class ModificarPrix(LoginRequiredMixin,UpdateView):
     model = GrandPrix
     template_name = "inicio/CBV/modificar_prix_CBV.html"
     fields= ['pais','win','descripcion']
     success_url= reverse_lazy('prixs')
     
     
-class EliminarPrix(DeleteView):
+class EliminarPrix(LoginRequiredMixin,DeleteView):
     model = GrandPrix
     template_name = "inicio/CBV/eliminar_prix_CBV.html"
     success_url= reverse_lazy('prixs')
@@ -172,6 +174,8 @@ class EliminarPrix(DeleteView):
 class MostrarPrix(DetailView):
     model = GrandPrix
     template_name = "inicio/CBV/mostrar_prix_CBV.html"
+
+
 
 
 

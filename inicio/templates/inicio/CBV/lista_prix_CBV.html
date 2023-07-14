@@ -18,7 +18,7 @@ Listado de Grand Prix
 {% block contenido %}
 
 <button> 
-<a href={% url 'crear_prix' %}>Crear Grand Prix</a>
+<a class="navbar-brand"href={% url 'crear_prix' %}>Crear Grand Prix</a>
 </button>
 
 {% comment %} <form action="" method="get">
@@ -33,9 +33,15 @@ Listado de Grand Prix
 {% for prix in prixs  %}
 <li> Nombre: {{prix.pais}} -- Victoria de: {{prix.win}}  </li>
 {% comment %} <a href= {% url 'descripcion_prix' prix.id %}>Ver Más</a> {% endcomment %}
-<a href= {% url 'eliminar_prix' prix.id %}>Eliminar</a>
-<a href= {% url 'modificar_prix' prix.id %}>Modificar</a>
+<button> 
+<a class="navbar-brand"href= {% url 'eliminar_prix' prix.id %}>Eliminar</a>
+</button>
+<button> 
+<a class="navbar-brand" href= {% url 'modificar_prix' prix.id %}>Modificar</a>
+</button>
+<button> 
 <a href= {% url 'mostrar_prix' prix.id %}>Ver Más</a>
+</button>
 {% endfor %}
 
 {% endblock contenido %}

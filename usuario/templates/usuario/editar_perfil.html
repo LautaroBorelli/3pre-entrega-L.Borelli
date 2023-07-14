@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block h1_header %}
+    <h1>Editar Perfil</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+
+<form action={% url 'usuario:editar' %} method="POST">
+ {% csrf_token %}
+ <table>   
+ {{formulario}}
+ <button>Guardar Cambios </button>    
+ </table> 
+ <button type='button'><a href={% url 'usuario:editar_pass' %}> Cambiar Contraseña </a> </button> 
+</form>
+{% endblock contenido %}
+
+

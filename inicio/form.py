@@ -1,5 +1,5 @@
 from django import forms
-
+from django.db import models
 
 class CrearEscuderia(forms.Form):
     nombre=forms.CharField(max_length=20)
@@ -32,3 +32,4 @@ class ModificarPrix(forms.Form):
     pais=forms.CharField(max_length=20)
     win=forms.CharField(max_length=20)
     descripcion=forms.CharField(max_length=199)
+    avatar=forms.ImageField()

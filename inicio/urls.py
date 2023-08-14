@@ -1,5 +1,7 @@
 from django.urls import path
 from inicio import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.inicio, name='inicio'),
@@ -20,3 +22,5 @@ urlpatterns = [
     path('grand/mostrar/<int:pk>/', views.MostrarPrix.as_view(), name= 'mostrar_prix'),
 
     ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

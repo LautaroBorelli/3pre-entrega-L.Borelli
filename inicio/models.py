@@ -25,3 +25,6 @@ class GrandPrix(models.Model):
     def __str__(self):
         return f"País: {self.pais} -- Win: {self.win} -- Autor:{self.autor} -- fecha: {self.fecha} -- Imagen: {self.avatar}"
     
+    
+class InfoExtra(models.Model):
+    avatar= models.ImageField(upload_to='avatares',null=True,blank=True)

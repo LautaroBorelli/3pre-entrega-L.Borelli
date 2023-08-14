@@ -11,6 +11,7 @@ from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import InfoExtra
 
 def inicio(request):
     return render(request,'inicio/inicio.html')
@@ -179,7 +180,7 @@ class ListaPrix(ListView):
 class ModificarPrix(LoginRequiredMixin,UpdateView):
     model = GrandPrix
     template_name = "inicio/CBV/modificar_prix_CBV.html"
-    fields= ['pais','win','descripcion']
+    fields= ['pais','win','descripcion','avatar']
     success_url= reverse_lazy('prixs')
     
     
